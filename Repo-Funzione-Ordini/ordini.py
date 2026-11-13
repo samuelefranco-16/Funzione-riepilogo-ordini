@@ -9,14 +9,12 @@ dati_errati = [
 
 dati_normali = [
   {"id": 1, "importo": 120, "stato": "pagato"},
-  {"id": 2, "importo": 50, "stato": "annullato"},
+  {"id": 2, "importo": 50, "stato": "pagato"},
   {"id": 3, "importo": 80, "stato": "pagato"},
   {"id": 4, "importo": 200, "stato": "pagato"},
   {"id": 5, "importo": 40, "stato": "in_attesa"}
 
 ]
-
-
 
 def sommaImporti(dizio):
   listaPagati = []
@@ -26,13 +24,11 @@ def sommaImporti(dizio):
   for i in dizio:
     if set(campiObbligatori) <= i.keys():
       for k,v in i.items():  
-        if k=="importo":
-          for k1,v1 in i.items():
-            if k1=="stato" and v1=="pagato":
-              if str(i["importo"]).isdigit():
-                if i["importo"] > 0 :
-                  listaPagati.append(i["importo"])
-                  contaOrdiniPagati += 1
+        if k=="stato" and v=="pagato":
+          if str(i["importo"]).isdigit():
+            if i["importo"] > 0 :
+              listaPagati.append(i["importo"])
+              contaOrdiniPagati += 1
 
   return f"Il totale pagato ammonta a: {sum(listaPagati)} \nIl totale degli ordini pagati è: {contaOrdiniPagati}"
         
@@ -40,4 +36,3 @@ def sommaImporti(dizio):
 print(sommaImporti(dati_errati))
 
 print(sommaImporti(dati_normali))
-
