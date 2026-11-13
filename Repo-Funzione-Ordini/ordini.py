@@ -22,7 +22,7 @@ def sommaImporti(dizio):
   campiObbligatori = ["id","importo","stato"]
 
   for i in dizio:
-    if set(campiObbligatori) <= i.keys():
+    if campiObbligatori == list(i.keys()):
       for k,v in i.items():  
         if k=="stato" and v=="pagato":
           if str(i["importo"]).isdigit():
