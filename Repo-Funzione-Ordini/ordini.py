@@ -8,7 +8,7 @@ dati_errati = [
 ]
 
 dati_normali = [
-  {"id": 1, "importo": 120, "stato": "pagato"}, #######
+  {"id": 1, "importo": 120, "stato": "pagato"},
   {"id": 2, "importo": 50, "stato": "annullato"},
   {"id": 3, "importo": 80, "stato": "pagato"},
   {"id": 4, "importo": 200, "stato": "pagato"},
